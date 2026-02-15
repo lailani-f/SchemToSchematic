@@ -1700,6 +1700,10 @@ function schemtoschematic(arrayBuffer, callback) {
     }
     
     function convertToLegacyBlockId(namespaceKey) {
+        if (namespaceKey == null) {
+            return 0;
+        }
+        
         if (namespaceKey in blocksNamespace) {
             return blocksNamespace[namespaceKey];
         }
